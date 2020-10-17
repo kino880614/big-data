@@ -1,0 +1,7 @@
+
+-- Ejecución Local
+exec [directorio local]/nombre-script.pig
+
+-- Ejecución HDFS
+
+pig -x mapreduce hdfs://hadoop:9000/[directorio]/nombre-script.pig
