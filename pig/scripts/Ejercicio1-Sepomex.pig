@@ -1,5 +1,5 @@
   -- Se realiza la carga del archivo de una ruta Local  
-  codSepomex  = LOAD '/inputData/CPdescarga.txt' USING PigStorage('|');
+  codSepomex  = LOAD '/HDFS/inputData/CPdescarga.txt' USING PigStorage('|');
   
   -- Se realiza la proyeccion de solo 2 campos (Cod. Postal, Nombre Colonia)
   codPostal = FOREACH codSepomex GENERATE $0,$1;
