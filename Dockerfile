@@ -138,6 +138,23 @@ COPY /hbase/hbase-env.sh /opt/hadoop/hbase/conf/
 
 ##### hbase #####################################
 
+RUN apt-get install -y wget 
+
+##### ZEPPELIN #####
+# Se agrega Zeppelin
+
+ADD /zeppelin/zeppelin-0.9.0-bin-all.tgz /
+
+RUN mv /zeppelin-0.9.0-preview2-bin-all /zeppelin
+
+COPY /zeppelin/conf/zeppelin-site.xml /zeppelin/conf
+
+COPY /zeppelin/conf/shiro.ini /zeppelin/conf
+
+COPY /zeppelin/conf/zeppelin-env.sh /zeppelin/conf
+
+##### ZEPPELIN #####
+
 #WEBUI
 EXPOSE 9870
 
@@ -161,5 +178,8 @@ EXPOSE 16000 16010 16020 16030 9090 9095
 
 #SPARK
 EXPOSE 4040
+
+# ZEPPELIN
+EXPOSE 9900
 
 CMD tail -f /dev/null
