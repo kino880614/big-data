@@ -1,0 +1,443 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "%hive\ncreate table if not exists clients (\n    Name                string,\n    Symbol              string,\n    LastSale            double,\n    MarketCapLabel      string,\n    MarketCapAmount     bigint,\n    IPOyear             int,\n    Sector              string,\n    industry            string,\n    SummaryQuote        string\n)\nrow format serde 'org.apache.hadoop.hive.serde2.OpenCSVSerde'\nstored as textfile;",
+      "user": "admin",
+      "dateUpdated": "2020-12-12T14:46:13+0000",
+      "config": {
+        "colWidth": 6,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "database_name": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : -1"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607767472564_1321155310",
+      "id": "paragraph_1607767472564_1321155310",
+      "dateCreated": "2020-12-12T10:04:32+0000",
+      "dateStarted": "2020-12-12T14:10:21+0000",
+      "dateFinished": "2020-12-12T14:10:21+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:93947"
+    },
+    {
+      "text": "%hive\nshow tables",
+      "user": "admin",
+      "dateUpdated": "2020-12-12T14:46:13+0000",
+      "config": {
+        "colWidth": 6,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "tab_name": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "tab_name\nclients\nemployee\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607768181536_180393265",
+      "id": "paragraph_1607768181536_180393265",
+      "dateCreated": "2020-12-12T10:16:21+0000",
+      "dateStarted": "2020-12-12T14:10:26+0000",
+      "dateFinished": "2020-12-12T14:10:26+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:93948"
+    },
+    {
+      "text": "%hive\n LOAD DATA LOCAL INPATH '/HDFS/inputData/clients.csv' OVERWRITE INTO TABLE clients; ",
+      "user": "admin",
+      "dateUpdated": "2020-12-12T14:46:13+0000",
+      "config": {
+        "colWidth": 6,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607769711328_941265250",
+      "id": "paragraph_1607769711328_941265250",
+      "dateCreated": "2020-12-12T10:41:51+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:93949",
+      "dateFinished": "2020-12-12T14:26:33+0000",
+      "dateStarted": "2020-12-12T14:26:33+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : -1"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%hive\n select * from clients limit 10;",
+      "user": "admin",
+      "dateUpdated": "2020-12-12T14:46:13+0000",
+      "config": {
+        "colWidth": 6,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "name": "string",
+                      "symbol": "string",
+                      "lastsale": "string",
+                      "marketcaplabel": "string",
+                      "marketcapamount": "string",
+                      "ipoyear": "string",
+                      "sector": "string",
+                      "industry": "string",
+                      "summaryquote": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607780090755_147273271",
+      "id": "paragraph_1607780090755_147273271",
+      "dateCreated": "2020-12-12T13:34:50+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:93950",
+      "dateFinished": "2020-12-12T14:27:22+0000",
+      "dateStarted": "2020-12-12T14:27:22+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "name\tsymbol\tlastsale\tmarketcaplabel\tmarketcapamount\tipoyear\tsector\tindustry\tsummaryquote\n1347 Capital Corp.\tTFSC\t9.43\t$56.09M\t56090000\t2014\tFinance\tBusiness Services\thttp://www.nasdaq.com/symbol/tfsc\n1347 Property Insurance Holdings, Inc.\tPIH\t7.66\t$48.7M\t48700000\t2014\tFinance\tProperty-Casualty Insurers\thttp://www.nasdaq.com/symbol/pih\n1-800 FLOWERS.COM, Inc.\tFLWS\t10.32\t$667.78M\t667780000\t1999\tConsumer Services\tOther Specialty Stores\thttp://www.nasdaq.com/symbol/flws\n1st Century Bancshares, Inc\tFCTY\t6.774\t$68.73M\t68730000\tn/a\tFinance\tMajor Banks\thttp://www.nasdaq.com/symbol/fcty\n1st Constitution Bancorp (NJ)\tFCCY\t11.18\t$79.77M\t79770000\tn/a\tFinance\tSavings Institutions\thttp://www.nasdaq.com/symbol/fccy\n1st Source Corporation\tSRCE\t31.31\t$747.13M\t747130000\tn/a\tFinance\tMajor Banks\thttp://www.nasdaq.com/symbol/srce\n21Vianet Group, Inc.\tVNET\t18.33\t$1.2B\t1200000000\t2011\tTechnology\tComputer Software: Programming, Data Processing\thttp://www.nasdaq.com/symbol/vnet\n2U, Inc.\tTWOU\t17.62\t$714.35M\t714350000\t2014\tTechnology\tComputer Software: Prepackaged Software\thttp://www.nasdaq.com/symbol/twou\n3X Inverse Gold ETN Velocityshares\tDGLD\t72.22\t$9.82M\t9820000\tn/a\tFinance\tInvestment Bankers/Brokers/Service\thttp://www.nasdaq.com/symbol/dgld\n51job, Inc.\tJOBS\t33.77\t$1.99B\t1990000000\t2004\tTechnology\tDiversified Commercial Services\thttp://www.nasdaq.com/symbol/jobs\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%hive\nselect symbol,ipoyear,sum(MarketCapAmount) mount\nfrom clients \nwhere ipoyear<>'n/a'\nand ipoyear>'%${Year}%'\ngroup by symbol,ipoyear;",
+      "user": "admin",
+      "dateUpdated": "2020-12-12T14:46:13+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "symbol": "string",
+                      "ipoyear": "string",
+                      "mount": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "pieChart": {},
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default",
+                  "stacked": false
+                }
+              },
+              "commonSetting": {},
+              "keys": [],
+              "groups": [
+                {
+                  "name": "ipoyear",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ],
+              "values": [
+                {
+                  "name": "mount",
+                  "index": 2,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql",
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {
+          "formName": "1980",
+          "Year": "1995"
+        },
+        "forms": {
+          "Year": {
+            "type": "TextBox",
+            "name": "Year",
+            "displayName": "Year",
+            "hidden": false,
+            "$$hashKey": "object:106462"
+          }
+        }
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "HIVE JOB",
+          "tooltip": "View in YARN WEB UI",
+          "group": "jdbc",
+          "values": [
+            {
+              "jobUrl": "http://hadoop:8088/proxy/application_1607744057871_0008/",
+              "$$hashKey": "object:106473"
+            }
+          ],
+          "interpreterSettingId": "hive"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607782605983_2019683868",
+      "id": "paragraph_1607782605983_2019683868",
+      "dateCreated": "2020-12-12T14:16:45+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:95418",
+      "dateFinished": "2020-12-12T14:45:16+0000",
+      "dateStarted": "2020-12-12T14:45:00+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "INFO  : Compiling command(queryId=root_20201212144500_ea9423ec-df0f-4ddd-8a81-cfa7cd2dd929): select symbol,ipoyear,sum(MarketCapAmount) mount\nfrom clients \nwhere ipoyear<>'n/a'\nand ipoyear>'%1995%'\ngroup by symbol,ipoyear\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Semantic Analysis Completed (retrial = false)\nINFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:symbol, type:string, comment:null), FieldSchema(name:ipoyear, type:string, comment:null), FieldSchema(name:mount, type:double, comment:null)], properties:null)\nINFO  : Completed compiling command(queryId=root_20201212144500_ea9423ec-df0f-4ddd-8a81-cfa7cd2dd929); Time taken: 0.12 seconds\nINFO  : Concurrency mode is disabled, not creating a lock manager\nINFO  : Executing command(queryId=root_20201212144500_ea9423ec-df0f-4ddd-8a81-cfa7cd2dd929): select symbol,ipoyear,sum(MarketCapAmount) mount\nfrom clients \nwhere ipoyear<>'n/a'\nand ipoyear>'%1995%'\ngroup by symbol,ipoyear\nWARN  : Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.\nINFO  : Query ID = root_20201212144500_ea9423ec-df0f-4ddd-8a81-cfa7cd2dd929\nINFO  : Total jobs = 1\nINFO  : Launching Job 1 out of 1\nINFO  : Starting task [Stage-1:MAPRED] in serial mode\nINFO  : Number of reduce tasks not specified. Estimated from input data size: 1\nINFO  : In order to change the average load for a reducer (in bytes):\nINFO  :   set hive.exec.reducers.bytes.per.reducer=<number>\nINFO  : In order to limit the maximum number of reducers:\nINFO  :   set hive.exec.reducers.max=<number>\nINFO  : In order to set a constant number of reducers:\nINFO  :   set mapreduce.job.reduces=<number>\nINFO  : number of splits:1\nINFO  : Submitting tokens for job: job_1607744057871_0008\nINFO  : Executing with tokens: []\nINFO  : The url to track the job: http://hadoop:8088/proxy/application_1607744057871_0008/\nINFO  : Starting Job = job_1607744057871_0008, Tracking URL = http://hadoop:8088/proxy/application_1607744057871_0008/\nINFO  : Kill Command = /opt/hadoop/bin/mapred job  -kill job_1607744057871_0008\nINFO  : Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1\nINFO  : 2020-12-12 14:45:05,912 Stage-1 map = 0%,  reduce = 0%\nINFO  : 2020-12-12 14:45:11,014 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 3.2 sec\nINFO  : 2020-12-12 14:45:15,091 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 5.29 sec\n"
+          },
+          {
+            "type": "TABLE",
+            "data": "symbol\tipoyear\tmount\nAAOI\t2013\t1.5142E8\nAAPL\t1980\t7.5428E11\nAAVL\t2014\t9.9508E8\nABAX\t1992\t1.36E9\nABCB\t1994\t7.3218E8\nABCO\t2001\t2.06E9\nABCW\t2014\t3.2016E8\nABDC\t2014\t1.8369E8\nABGB\t2013\t2.94E9\nABTL\t1999\t9.029E7\nABY\t2014\t2.78E9\nACAD\t1985\t3.74E9\nACAS\t1997\t3.98E9\nACAT\t1990\t4.7075E8\nACHN\t2006\t1.39E9\nACLS\t2000\t3.0241E8\nACOR\t2006\t1.57E9\nACPW\t2000\t4.226E7\nACRX\t2011\t3.5534E8\nACSF\t2014\t1.29E8\nACTS\t2005\t1.3674E8\nADBE\t1986\t3.914E10\nADHD\t2013\t1.5735E8\nADMS\t2014\t2.9593E8\nADNC\t2012\t1.073E8\nADTN\t1994\t1.25E9\nADUS\t2009\t2.3518E8\nADVS\t1995\t2.31E9\nAEGR\t2010\t7.5327E8\nAEHR\t1997\t3.067E7\nAEIS\t1995\t1.06E9\nAEPI\t1986\t2.6074E8\nAERI\t2013\t6.6461E8\nAFCB\t2010\t4.585E7\nAFFX\t1996\t8.7123E8\nAFH\t2013\t2.0777E8\nAFMD\t2014\t1.3023E8\nAFOP\t2000\t3.1672E8\nAGEN\t2000\t3.2596E8\nAGIO\t2013\t3.93E9\nAGNC\t2008\t7.74E9\nAGRX\t2014\t1.8951E8\nAGTC\t2014\t3.7372E8\nAHGP\t2006\t3.15E9\nAHPI\t1992\t1.373E7\nAIMC\t2006\t6.9944E8\nAINV\t2004\t1.85E9\nAIQ\t2001\t2.6922E8\nAKAM\t1999\t1.275E10\nAKAO\t2014\t2.0368E8\nAKBA\t2014\t2.0626E8\nAKER\t2014\t1.851E7\nALDR\t2014\t1.03E9\nALDX\t2014\t5.844E7\nALGN\t2001\t4.56E9\nALGT\t2006\t3.23E9\nALIM\t2010\t2.3566E8\nALKS\t1991\t1.071E10\nALLT\t2006\t3.092E8\nALNY\t2004\t8.58E9\nALOG\t1972\t1.05E9\nALOT\t1983\t1.07E8\nALSK\t1999\t8.471E7\nALTR\t1988\t1.087E10\nALXA\t2006\t4.23E7\nALXN\t1996\t3.76E10\nAMAT\t1972\t3.07E10\nAMBA\t2012\t1.57E9\nAMCC\t1997\t3.8304E8\nAMCF\t2010\t1.549E7\nAMCN\t2007\t1.3045E8\nAMDA\t2014\t1.104E7\nAMGN\t1983\t1.1993E11\nAMKR\t1998\t2.17E9\nAMPH\t2014\t5.7374E8\nAMRI\t1999\t5.3051E8\nAMRS\t2010\t1.5815E8\nAMSC\t1991\t7.371E7\nAMSF\t2005\t8.0825E8\nAMWD\t1986\t6.9838E8\nAMZN\t1997\t1.7817E11\nANAC\t2010\t1.87E9\nANAD\t1995\t1.0736E8\nANCB\t2011\t5.511E7\nANGI\t2011\t3.9382E8\nANGO\t2004\t6.8168E8\nANSS\t1996\t8.02E9\nANTH\t2010\t1.0506E8\nAOSL\t2010\t2.3431E8\nAPEI\t2007\t5.8838E8\nAPOL\t1994\t2.9E9\nAQXP\t2014\t1.1176E8\nARAY\t2007\t6.3105E8\nARCC\t2004\t5.31E9\nARCP\t2011\t8.57E9\nARDM\t1996\t1.0693E8\nARDX\t2014\t3.1852E8\nAREX\t2007\t2.848E8\nARGS\t2014\t1.8064E8\nARIA\t1994\t1.51E9\nARII\t2006\t1.2E9\nARIS\t1991\t5.137E7\nARLP\t1999\t2.99E9\nARNA\t2000\t1.02E9\nARQL\t1996\t8.474E7\nARRY\t2000\t1.15E9\nARTX\t1994\t6.38E7\nARUN\t2007\t2.02E9\nASBB\t2011\t8.932E7\nASFI\t1995\t1.096E8\nASML\t1995\t4.539E10\nASND\t2015\t4.4358E8\nASPX\t2014\t2.2E9\nASTE\t1986\t9.0041E8\nATAI\t2008\t1.0071E8\nATEC\t2006\t1.3445E8\nATHN\t2007\t5.08E9\nATLC\t1995\t4.006E7\nATML\t1991\t3.5E9\nATOS\t2012\t4.029E7\nATRA\t2014\t5.1936E8\nATRC\t2005\t5.0821E8\nATRM\t1993\t3990000.0\nAUDC\t1999\t2.2715E8\nAUMA\t2014\t2.934E8\nAVAV\t2007\t6.5021E8\nAVEO\t2010\t4.858E7\nAVGO\t2009\t2.861E10\nAVGR\t2015\t1.0649E8\nAVID\t1993\t5.7801E8\nAVNU\t2015\t1.1762E8\nAWAY\t2011\t2.92E9\nAWRE\t1996\t1.0495E8\nAXTI\t1998\t8.669E7\nAZPN\t1994\t3.45E9\nBABY\t2001\t1.19E9\nBAMM\t1992\t3.829E7\nBANF\t1993\t9.1324E8\nBANX\t2013\t1.349E8\nBASI\t1997\t1.632E7\nBBBY\t1992\t1.427E10\nBBEP\t2006\t1.05E9\nBBGI\t2000\t1.1602E8\nBBRG\t2010\t2.0365E8\nBBSI\t1993\t2.7448E8\nBCBP\t2005\t9.838E7\nBCOV\t2012\t2.598E8\nBCRX\t1994\t7.2942E8\nBDCV\t2011\t4.852E7\nBDMS\t1998\t2.79E7\nBEAT\t2008\t2.5376E8\nBEAV\t1990\t6.8E9\nBEBE\t1998\t3.0572E8\nBECN\t2004\t1.42E9\nBGFV\t2002\t2.7584E8\nBGMD\t2011\t2.823E7\nBHACU\t2015\t0.0\nBHBK\t2014\t3.6637E8\nBIDU\t2005\t7.352E10\nBIND\t2013\t1.0624E8\nBIOC\t2014\t6450000.0\nBIOD\t2007\t3.412E7\nBKCC\t2007\t6.4111E8\nBKEP\t2011\t2.3559E8\nBLCM\t2014\t5.4439E8\nBLDR\t2005\t6.3794E8\nBLKB\t2004\t2.14E9\nBLMN\t2012\t3.19E9\nBLMT\t2011\t1.7202E8\nBLPH\t2015\t1.2157E8\nBLUE\t2013\t2.69E9\nBLVD\t2014\t2.6873E8\nBMRN\t1999\t1.58E10\nBNFT\t2013\t5.6094E8\nBOFI\t2005\t1.36E9\nBONA\t2010\t4.1944E8\nBONT\t1991\t1.1299E8\nBRCD\t1999\t5.2E9\nBRCM\t1998\t2.676E10\nBRDR\t2014\t2.3573E8\nBRKS\t1995\t8.2325E8\nBSFT\t2010\t8.0141E8\nBSQR\t1999\t5.523E7\nBV\t2012\t7.2659E8\nBVSN\t1996\t2.942E7\nBWFG\t2014\t1.3303E8\nBWLD\t2003\t3.6E9\nCACC\t1992\t3.55E9\nCACG\t2013\t8.583E7\nCADT\t2014\t8.624E7\nCAKE\t1992\t2.44E9\nCALA\t2014\t2.9065E8\nCALD\t2003\t6.9685E8\nCALM\t1996\t1.79E9\nCAMB\t2014\t1.0408E8\nCAMP\t1983\t6.8066E8\nCAMT\t2000\t9.355E7\nCAPN\t2014\t3.689E7\nCARA\t2014\t2.4851E8\nCARB\t2011\t4.0284E8\nCASH\t1993\t2.2988E8\nCASY\t1983\t3.53E9\nCATM\t2007\t1.7E9\nCAVM\t2007\t3.61E9\nCBF\t2012\t1.25E9\nCBLI\t2006\t1.271E7\nCBOE\t2010\t5.28E9\nCBRL\t1981\t3.22E9\nCBRX\t1988\t6.463E7\nCCCR\t2013\t3.652E7\nCCIH\t2010\t2.4481E8\nCCLP\t2011\t5.5215E8\nCCMP\t2000\t1.24E9\nCCRN\t2001\t3.81E8\nCCXI\t2012\t3.5843E8\nCDNA\t2014\t7.2E7\nCDW\t2013\t6.5E9\nCDXS\t2010\t1.3724E8\nCECO\t1998\t3.5456E8\nCELG\t1987\t9.858E10\nCEMP\t2012\t1.27E9\nCENT\t1993\t4.533E8\nCENX\t1996\t1.97E9\nCERE\t2012\t1.8E7\nCERN\t1986\t2.469E10\nCERS\t1997\t4.3048E8\nCERU\t2014\t1.3343E8\nCETV\t1994\t3.6947E8\nCFNL\t1998\t6.1978E8\nCFRX\t2014\t8.431E7\nCG\t2012\t8.6E9\nCGEN\t2000\t4.2727E8\nCGNX\t1989\t3.69E9\nCGO\t2005\t1.126E8\nCHCI\t2004\t2.204E7\nCHEF\t2011\t5.861E8\nCHEKU\t2015\t0.0\nCHEV\t2004\t9.659E7\nCHFN\t2010\t1.9443E8\nCHI\t2002\t9.1047E8\nCHKP\t1996\t1.574E10\nCHRS\t2014\t9.1293E8\nCHRW\t1997\t1.061E10\nCHUY\t2012\t3.839E8\nCHW\t2007\t5.3047E8\nCHY\t2003\t1.06E9\nCISAW\t2013\t0.0\nCISG\t2007\t3.9105E8\nCKSW\t2000\t2.6776E8\nCLAC\t2013\t2.47E8\nCLCT\t1999\t2.0513E8\nCLDN\t2014\t3.7987E8\nCLIR\t2012\t8.604E7\nCLMS\t2004\t2.7737E8\nCLMT\t2006\t1.84E9\nCLNE\t2007\t4.4307E8\nCLUB\t2006\t1.7032E8\nCLVS\t2011\t2.51E9\nCLWT\t1997\t5800000.0\nCMCO\t1996\t5.1363E8\nCME\t2002\t3.175E10\nCMFN\t2014\t1.8737E8\nCMLS\t1998\t9.079E8\nCMRX\t2013\t1.7E9\nCNAT\t2013\t9.916E7\nCNBKA\t1987\t2.1397E8\nCNCE\t2014\t2.6388E8\nCNLM\t2015\t5.153E7\nCNMD\t1987\t1.41E9\nCNSL\t2005\t1.21E9\nCNTF\t2005\t5.399E7\nCNV\t2014\t2.73E9\nCNXR\t2014\t1.9513E8\nCOBZ\t1998\t4.6491E8\nCOKE\t1972\t9.479E8\nCOLB\t1992\t1.5E9\nCOLM\t1998\t3.9E9\nCOMM\t2013\t5.84E9\nCONE\t2013\t1.16E9\nCONN\t2003\t9.2921E8\nCORI\t2014\t1.2704E8\nCORT\t1982\t3.4101E8\nCOSI\t2002\t1.0397E8\nCOVS\t2013\t9.948E7\nCPGI\t2010\t3.918E7\nCPHD\t2000\t4.13E9\nCPIX\t2009\t1.0189E8\nCPLA\t2006\t7.9951E8\nCPLP\t2007\t9.8804E8\nCPRT\t1994\t4.8E9\nCPRX\t2006\t2.741E8\nCPSI\t2002\t5.8992E8\nCPSS\t1992\t1.7861E8\nCPST\t2000\t2.3151E8\nCPTA\t2013\t2.4184E8\nCRAI\t1998\t3.0323E8\nCRDC\t2006\t5.248E7\nCRDS\t1999\t3.928E7\nCREE\t1993\t4.37E9\nCROX\t2006\t8.8684E8\nCRTO\t2013\t2.64E9\nCRUS\t1989\t1.87E9\nCRWN\t2000\t1.24E9\nCRZO\t1997\t2.41E9\nCSCD\t2004\t2.1987E8\nCSCO\t1990\t1.5141E11\nCSGP\t1998\t6.19E9\nCSGS\t1996\t1.04E9\nCSII\t1981\t1.12E9\nCSIQ\t2006\t1.57E9\nCSOD\t2011\t1.88E9\nCSPI\t1982\t2.826E7\nCSQ\t2004\t1.76E9\nCSTE\t2012\t2.25E9\nCSUN\t2007\t2.447E7\nCTAS\t1983\t9.68E9\nCTCM\t2006\t6.2928E8\nCTCT\t2007\t1.33E9\nCTHR\t1997\t3.234E7\nCTIB\t1997\t1.32E7\nCTIC\t1997\t4.0992E8\nCTRL\t2013\t3.1547E8\nCTRN\t2005\t4.1158E8\nCTRP\t2003\t6.35E9\nCTSH\t1998\t3.839E10\nCTXS\t1995\t1.045E10\nCUTR\t2004\t1.7662E8\nCVGI\t2004\t1.7726E8\nCVLT\t2006\t2.02E9\nCVTI\t1994\t4.6689E8\nCWAY\t2014\t5.474E7\nCWST\t1997\t1.6781E8\nCY\t1986\t2.47E9\nCYBE\t1987\t6.55E7\nCYBR\t2014\t2.08E9\nCYBX\t1993\t1.53E9\nCYNO\t2005\t6.62E8\nCYOU\t2009\t1.37E9\nCYTK\t2004\t2.9067E8\nCYTR\t1986\t1.7724E8\nCZR\t2012\t1.58E9\nDAIO\t1981\t2.485E7\nDAKT\t1994\t5.5231E8\nDATE\t2011\t1.6049E8\nDBVT\t2014\t7.221E8\nDCTH\t2000\t1.058E7\nDERM\t2014\t3.936E8\nDFRG\t2012\t4.6179E8\nDGAS\t1981\t1.4025E8\nDGII\t1989\t2.4845E8\nDHRM\t2010\t1.548E7\nDISH\t1995\t1.747E10\nDLTR\t1995\t1.598E10\nDMND\t2005\t8.2153E8\nDNKN\t2011\t4.85E9\nDOVR\t2005\t2.545E7\nDPRX\t2014\t1.1637E8\nDRAD\t2004\t7.248E7\nDRNA\t2014\t4.6246E8\nDRRX\t2000\t1.1254E8\nDRWI\t2009\t6.926E7\nDRYS\t2005\t6.7136E8\nDSKY\t2014\t4.9137E8\nDSPG\t1994\t2.4703E8\nDSWL\t1995\t3.035E7\nDTLK\t1999\t2.7895E8\nDTSI\t2003\t5.2675E8\nDVAX\t2004\t4.667E7\nDWA\t2004\t1.73E9\nDWCH\t1992\t7.696E7\nDXCM\t2005\t4.93E9\nDYAX\t2000\t2.18E9\nEAC           \t2012\t9.945E7\nEARS\t2014\t1.6794E8\nEBAY\t1998\t7.021E10\nEBIO\t2014\t1.7674E8\nECHO\t2009\t6.5922E8\nECYT\t2011\t2.3733E8\nEDAP\t1997\t8.726E7\nEEFT\t1997\t2.86E9\nEEI\t1987\t4.4E7\nEFII\t1992\t1.88E9\nEGAN\t1999\t9.62E7\nEGLT\t2014\t2.5061E8\nEGOV\t1999\t1.11E9\nEGRX\t2014\t4.7275E8\nEHTH\t2006\t1.8655E8\nEIGI\t2013\t2.63E9\nELON\t1998\t5.099E7\nELOS\t2004\t4.0703E8\nELTK\t1997\t1.227E7\nEMCI\t1982\t4.0639E8\nEMKR\t1997\t1.7659E8\nEMMS\t1994\t9.324E7\nENFC\t2014\t1.0343E8\nENOC\t2007\t5.2107E8\nENPH\t2012\t5.8021E8\nENSG\t2007\t9.3653E8\nENT\t2011\t1.02E9\nENTA\t2013\t6.7063E8\nENTG\t2000\t1.91E9\nENTL\t2015\t4.3129E8\nENTR\t2007\t2.6572E8\nENVI\t2012\t3.769E7\nENZN\t1984\t4.856E7\nENZY          \t2013\t1.5613E8\nEOPN\t2012\t2.5069E8\nEPAY\t1999\t1.07E9\nEPIQ\t1997\t6.6553E8\nEPZM\t2013\t7.7756E8\nEQIX\t2000\t1.255E10\nERII\t2008\t1.7431E8\nEROC\t2006\t4.0351E8\nESPR\t2013\t1.34E9\nESRX\t1992\t6.317E10\nETRM\t2007\t7.947E7\nEVAR\t2014\t8.918E7\nEVEP\t2006\t7.9755E8\nEVOK\t2013\t3.472E7\nEVOL\t1998\t9.984E7\nEVRY\t2012\t2.345E7\nEXA\t2012\t1.4391E8\nEXAC\t1996\t3.2007E8\nEXAS\t2001\t2.17E9\nEXEL\t2000\t5.3489E8\nEXLS\t2006\t1.06E9\nEXTR\t1999\t3.4367E8\nEYES\t2014\t3.0297E8\nEZPW\t1991\t5.5636E8\nFANG\t2012\t4.4E9\nFARO\t1997\t1.02E9\nFAST\t1987\t1.265E10\nFATE\t2013\t1.0285E8\nFB\t2012\t2.2363E11\nFBNC\t1987\t3.3814E8\nFBNK\t2011\t2.4007E8\nFCFS\t1991\t1.39E9\nFCS\t1999\t1.91E9\nFCVA\t2007\t5.532E7\nFDUS\t2011\t2.6348E8\nFEIC\t1995\t3.35E9\nFEYE\t2013\t6.94E9\nFFHL\t2006\t7840000.0\nFFIV\t1999\t8.61E9\nFGEN\t2014\t1.71E9\nFIBK\t2010\t5.8397E8\nFINL\t1992\t1.14E9\nFISH\t1992\t4.1905E8\nFISI\t1999\t3.2073E8\nFISV\t1986\t1.929E10\nFIVE\t2012\t1.75E9\nFIVN\t2014\t1.8574E8\nFLDM\t2011\t1.1E9\nFLEX\t1994\t7.0E9\nFLIR\t1993\t4.53E9\nFLKS\t2015\t2.6192E8\nFLML\t1996\t5.6925E8\nFLWS\t1999\t6.6778E8\nFLXN\t2014\t4.8202E8\nFMI\t2013\t1.38E9\nFNBC\t2013\t6.0369E8\nFNGN\t2010\t1.99E9\nFNSR\t1999\t2.22E9\nFNTCU\t2015\t0.0\nFNWB\t2015\t1.6402E8\nFOLD\t2007\t8.2867E8\nFOMX\t2014\t1.9715E8\nFONR\t1981\t8.158E7\nFORM\t2003\t5.156E8\nFORR\t1996\t6.9725E8\nFOSL\t1993\t4.35E9\nFOXF\t2013\t5.8514E8\nFPRX\t2013\t6.6891E8\nFRAN\t2011\t6.3954E8\nFRBA\t2013\t4.732E7\nFRED\t1992\t7.0213E8\nFRPT\t2014\t5.405E8\nFRSH\t2014\t2.3091E8\nFSAM\t2014\t6.1413E8\nFSBW\t2012\t6.293E7\nFSC\t2008\t1.11E9\nFSFR\t2013\t3.2178E8\nFSGI\t2005\t1.4969E8\nFSLR\t2006\t4.91E9\nFTNT\t2009\t5.58E9\nFUEL\t2013\t4.4681E8\nFULL\t2010\t5.568E7\nFWM\t2013\t2.454E8\nFWP\t2014\t1.08E9\nGAIA\t1999\t1.6245E8\nGAIN\t2005\t2.0651E8\nGARS\t2013\t2.4853E8\nGASS\t2005\t2.4561E8\nGBDC\t2010\t8.2928E8\nGBIM\t2014\t4.375E7\nGBSN\t2014\t9140000.0\nGDEF\t2013\t9.913E7\nGERN\t1996\t4.9679E8\nGEVO\t2011\t2.69E7\nGGAC\t2014\t1.771E8\nGHDX\t2005\t9.8337E8\nGIFI\t1997\t2.4467E8\nGIGA\t1983\t9580000.0\nGIII\t1989\t2.37E9\nGILD\t1992\t1.548E11\nGLAD\t2001\t1.7661E8\nGLMD\t2014\t8.925E7\nGLRE\t2007\t1.2E9\nGLUU\t2007\t5.4651E8\nGLYC\t2014\t1.5343E8\nGMAN\t2010\t7.733E7\nGMCR\t1993\t1.987E10\nGMLP\t2011\t1.71E9\nGNBC\t2014\t2.9704E8\nGNCA\t2014\t1.5849E8\nGNMK\t2010\t5.5173E8\nGNVC\t2000\t5.82E7\nGOGO\t2013\t1.38E9\nGOMO\t2013\t1.6708E8\nGOOD\t2003\t3.3314E8\nGOOG\t2004\t3.6682E11\nGPRO\t2014\t5.67E9\nGRMN\t2000\t9.45E9\nGRPN\t2011\t5.5E9\nGRVY\t2005\t1.443E7\nGSBC\t1989\t5.0696E8\nGSIT\t2007\t1.3395E8\nGSM\t2009\t1.13E9\nGSVC\t2011\t1.9262E8\nGTLS\t2006\t9.4705E8\nGTXI\t2004\t9.823E7\nGUID\t2006\t1.7655E8\nGWGH\t2014\t4.934E7\nGWPH\t2013\t1.67E9\nHABT\t2014\t8.1465E8\nHAWK\t2013\t2.02E9\nHAYN\t2007\t5.1702E8\nHBIO\t2000\t1.7669E8\nHBK\t2012\t4.44E7\nHCAC\t2014\t1.4433E8\nHCAP\t2013\t7.69E7\nHCCI\t2008\t2.7583E8\nHCSG\t1983\t2.31E9\nHDNG\t1995\t1.4668E8\nHDP\t2014\t1.02E9\nHDRA\t2014\t9.785E7\nHDS\t2013\t5.81E9\nHEES\t2006\t7.8218E8\nHERO\t2005\t1.3832E8\nHIBB\t1996\t1.23E9\nHIIQ\t2013\t1.1413E8\nHIMX\t2006\t1.33E9\nHLIT\t1995\t6.9567E8\nHLSS\t2012\t1.19E9\nHMHC\t2013\t2.84E9\nHMST\t2012\t2.5553E8\nHMSY\t1992\t1.68E9\nHNSN\t2006\t1.4444E8\nHOLX\t1990\t8.88E9\nHOMB\t2006\t2.13E9\nHPTX\t2012\t5.6824E8\nHQY\t2014\t1.06E9\nHRZN\t2010\t1.3506E8\nHSGX\t2014\t1.2247E8\nHSIC\t1995\t1.195E10\nHSII\t1999\t4.2345E8\nHSKA\t1997\t1.336E8\nHSTM\t2000\t7.3121E8\nHTBI\t2012\t3.2658E8\nHTBX\t2013\t4.427E7\nHTCH\t1985\t1.2246E8\nHTHT\t2010\t1.37E9\nHTLD\t1986\t2.24E9\nHTWO\t2013\t2.4268E8\nHUBG\t1996\t1.45E9\nHURN\t2004\t1.78E9\nHWCC\t2006\t1.8573E8\nHZNP\t2011\t2.2E9\nIBTX\t2013\t6.2878E8\nICBK\t2015\t1.1111E8\nICCC\t1987\t2.028E7\nICEL\t2013\t8.476E7\nICFI\t2006\t7.6741E8\nICLR\t1998\t3.71E9\nICPT\t2012\t4.94E9\nICUI\t1992\t1.35E9\nIDSY\t1999\t8.619E7\nIDTI\t1984\t3.09E9\nIDXX\t1991\t7.45E9\nIGLD\t1999\t8.411E7\nIIVI\t1987\t1.07E9\nIKAN\t2005\t4.669E7\nILMN\t2000\t2.921E10\nIMDZ\t2014\t4.0813E8\nIMGN\t1989\t6.5614E8\nIMI\t2011\t8.234E7\nIMKTA\t1987\t8.6935E8\nIMMR\t1999\t2.4357E8\nINAP\t1999\t4.9165E8\nINCR\t2014\t1.57E9\nINFA\t1999\t4.77E9\nINFN\t2007\t2.21E9\nINGN\t2014\t6.2109E8\nININ\t1999\t8.9687E8\nINNL\t2014\t1.5862E8\nINOD\t1993\t6.841E7\nINOV\t2015\t4.31E9\nINPH\t1984\t1.818E7\nINSY\t2013\t1.83E9\nINTU\t1993\t2.761E10\nINTX\t2004\t6.968E7\nINWK\t2006\t3.4648E8\nIPAS\t2003\t5.817E7\nIPCC\t2003\t8.6755E8\nIPCM\t2008\t7.1835E8\nIPDN\t2013\t6.158E7\nIPGP\t2006\t4.87E9\nIPHS\t2006\t1.24E9\nIPWR\t2013\t5.512E7\nIRBT\t2005\t9.3349E8\nIRG\t2012\t1.8734E8\nIRIX\t1996\t9.674E7\nIRMD\t2014\t1.5931E8\nIROQ\t2011\t7.268E7\nIRWD\t2010\t2.19E9\nISCA\t1996\t1.49E9\nISIG\t1991\t3.799E7\nISIL\t2000\t2.0E9\nISIS\t1991\t7.92E9\nISNS\t1995\t1.212E7\nISRG\t2000\t1.879E10\nISRL\t1983\t3.3428E8\nISSC\t2000\t7.431E7\nISSI\t1995\t5.1664E8\nISTR\t2014\t1.0591E8\nITEK\t2015\t8.321E7\nITRI\t1993\t1.37E9\nITRN\t2005\t5.4205E8\nIVAC\t1995\t1.631E8\nJAKK\t1996\t1.6192E8\nJASN\t2013\t1.7615E8\nJASO\t2007\t3.9266E8\nJAZZ\t2007\t1.043E10\nJBLU\t2002\t5.44E9\nJBSS\t1991\t4.0102E8\nJCOM\t1999\t3.21E9\nJD\t2014\t3.843E10\nJIVE\t2011\t3.5868E8\nJJSF\t1986\t1.88E9\nJKHY\t1985\t5.5E9\nJOBS\t2004\t1.99E9\nJRJC\t2004\t1.3038E8\nJRVR\t2014\t6.2275E8\nJST\t1998\t8.817E7\nJTPY\t2011\t3.632E7\nJUNO\t2014\t4.12E9\nJVA\t2005\t3.26E7\nJYNT\t2014\t6.992E7\nKANG\t2014\t1.14E9\nKBIO\t2013\t1.491E7\nKBSF\t2013\t9.277E7\nKCAP\t2006\t2.694E8\nKEYW\t2010\t3.2967E8\nKFRC\t1995\t7.2095E8\nKFX\t2013\t6.2601E8\nKIN\t2013\t1.3353E8\nKIRK\t2002\t4.1923E8\nKITE\t2014\t2.66E9\nKLAC\t1980\t1.057E10\nKMDA\t2013\t1.6447E8\nKONA\t2005\t2.7805E8\nKONE\t2010\t4750000.0\nKOPN\t1992\t2.5704E8\nKPTI\t2013\t9.0097E8\nKTCC\t1983\t1.033E8\nKTEC\t1993\t7.817E7\nKTWO\t2014\t7.6917E8\nKVHI\t1996\t2.0462E8\nKYTH\t2012\t9.8479E8\nLABL\t1987\t1.1E9\nLAKE\t1986\t7.047E7\nLAMR\t1996\t6.41E9\nLAND\t2013\t8.219E7\nLAYN\t1992\t1.5002E8\nLCUT\t1991\t2.1976E8\nLDRH\t2013\t9.8234E8\nLEDS\t2010\t3.866E7\nLENS\t2015\t9.5E7\nLEVY\t2014\t1.8731E8\nLGCY\t2007\t8.8809E8\nLGIH\t2013\t2.8446E8\nLHCG\t2005\t5.2096E8\nLINC\t2005\t5.34E7\nLINE\t2006\t4.19E9\nLIOX\t1999\t3.7377E8\nLIQD\t2013\t2.187E7\nLJPC\t1994\t2.8457E8\nLLNW\t2007\t3.1951E8\nLLTC\t1986\t1.154E10\nLMAT\t2006\t1.3254E8\nLMIA\t1998\t1.826E8\nLMNS\t2014\t3.9823E8\nLMNX\t2000\t6.7676E8\nLMRK\t2014\t1.3058E8\nLNCO\t2012\t1.54E9\nLNDC\t1996\t3.8056E8\nLOCO\t2014\t9.1559E8\nLOGI\t1997\t2.44E9\nLOGM\t2009\t1.31E9\nLONG\t2004\t5.8852E8\nLOOK\t1999\t4110000.0\nLOPE\t2008\t2.18E9\nLOXO\t2014\t2.2722E8\nLPLA\t2010\t4.51E9\nLPSN\t2000\t6.2523E8\nLPTH\t1996\t1.511E7\nLQDT\t2006\t2.8839E8\nLRCX\t1984\t1.336E10\nLSTR\t1993\t3.15E9\nLTRE\t1995\t2.314E7\nLTRX\t2000\t2.69E7\nLULU\t2007\t8.9E9\nLUNA\t2006\t2.122E7\nLYTS\t1985\t1.9148E8\nMACK\t2012\t1.17E9\nMAGS\t1993\t8.395E7\nMANH\t1998\t3.81E9\nMANT\t2002\t1.25E9\nMASI\t2007\t1.57E9\nMATW\t1994\t1.6E9\nMBII\t2013\t9.125E7\nMBLX\t2006\t6.083E7\nMBUU\t2014\t3.0749E8\nMBWM\t1998\t3.2393E8\nMCBK\t2012\t6.368E7\nMCEP\t2011\t1.4165E8\nMCGC\t2001\t1.514E8\nMCHP\t1993\t1.026E10\nMCHX\t2004\t1.778E8\nMCOX\t2010\t5.019E7\nMCRI\t1993\t3.0699E8\nMCRL\t1994\t8.3796E8\nMCUR\t2014\t1.6626E8\nMDAS\t2007\t1.19E9\nMDCO\t2000\t1.86E9\nMDSO\t2009\t2.57E9\nMDVX\t2015\t4.357E7\nMDWD\t2014\t1.6206E8\nMEIL\t2012\t1.834E7\nMELA\t2005\t1.262E7\nMELI\t2007\t5.78E9\nMELR\t2014\t3.817E7\nMEMP\t2011\t1.51E9\nMENT\t1984\t2.91E9\nMERU\t2010\t6.497E7\nMFLX\t2004\t4.3576E8\nMFRI\t1989\t4.921E7\nMFRM\t2011\t2.08E9\nMGIC\t1991\t3.0319E8\nMGNX\t2013\t9.9673E8\nMGRC\t1984\t8.2163E8\nMHGC\t2006\t2.6849E8\nMIK\t2014\t5.69E9\nMIND\t1994\t7.879E7\nMINI\t1994\t1.93E9\nMKSI\t1999\t1.9E9\nMKTO\t2013\t1.13E9\nMKTX\t2004\t2.95E9\nMLNX\t2007\t2.1E9\nMMLP\t2002\t1.07E9\nMMYT\t2010\t1.04E9\nMNKD\t2004\t2.8E9\nMNRO\t1991\t2.01E9\nMNTA\t2004\t6.9019E8\nMOBI\t2010\t1.1238E8\nMOBL\t2014\t6.6862E8\nMOKO\t2014\t7.807E7\nMOLG\t2014\t1.701E8\nMOMO\t2014\t2.14E9\nMORN\t2005\t3.44E9\nMOSY\t2001\t9.657E7\nMPEL\t2006\t1.513E10\nMPWR\t2004\t2.01E9\nMRCC\t2012\t1.4029E8\nMRCY\t1998\t5.8259E8\nMRD\t2014\t3.74E9\nMRGE\t1998\t4.4075E8\nMRKT\t2014\t4.79E9\nMRLN\t2003\t2.4141E8\nMRNS\t2014\t1.6319E8\nMRTN\t1986\t7.6867E8\nMRVC\t1992\t7.326E7\nMRVL\t2000\t8.33E9\nMSFT\t1986\t3.5978E11\nMSON\t1992\t9.355E7\nMSTR\t1998\t2.03E9\nMTBC\t2014\t2.97E7\nMTGE\t2011\t9.3437E8\nMTLS\t2014\t3.7658E8\nMTRX\t1990\t4.9869E8\nMTSI\t2012\t1.83E9\nMTSL\t1997\t7450000.0\nMTSN\t1994\t3.4097E8\nMVIS\t1996\t8.89E7\nMWIV\t2005\t2.45E9\nMXIM\t1988\t9.79E9\nMYGN\t1995\t2.44E9\nNANO\t1984\t4.2011E8\nNATH\t1993\t3.4287E8\nNATI\t1995\t3.99E9\nNATL\t2005\t5.1807E8\nNAVG\t1986\t1.04E9\nNBIX\t1996\t3.04E9\nNCIT\t2005\t1.5282E8\nNCLH\t2013\t9.71E9\nNCMI\t2007\t9.1306E8\nNCTY\t2004\t3.449E7\nNDLS\t2013\t5.6302E8\nNDRM\t2014\t1.9682E8\nNEOG\t1989\t1.82E9\nNEOT\t1996\t9.269E7\nNERV\t2014\t9.81E7\nNEWS\t2006\t4.6984E8\nNFLX\t2002\t2.893E10\nNILE\t2004\t3.4672E8\nNLNK\t2011\t1.11E9\nNLST\t2006\t5.932E7\nNMIH\t2013\t4.4006E8\nNNBR\t1994\t5.1374E8\nNPSP\t1994\t4.91E9\nNRX\t2014\t5.583E7\nNSIT\t1995\t1.07E9\nNSPH\t2007\t3.443E7\nNSTG\t2013\t2.2353E8\nNTAP\t1995\t1.191E10\nNTCT\t1999\t1.61E9\nNTGR\t2003\t1.11E9\nNTLS\t2006\t1.0738E8\nNURO\t2004\t1.366E7\nNUTR\t1998\t1.717E8\nNUVA\t2004\t2.26E9\nNVDA\t1999\t1.214E10\nNVEE\t2013\t7.075E7\nNVET\t2015\t1.0526E8\nNVMI\t2000\t3.1749E8\nNWBI\t2009\t1.12E9\nNWBO\t2012\t3.9633E8\nNWPX\t1995\t2.3905E8\nNXPI\t2010\t1.954E10\nNXST\t2003\t1.67E9\nNXTM\t2005\t1.1E9\nOBAS\t1999\t3.203E7\nOCLS\t2007\t1.361E7\nOCRX\t2011\t1.1845E8\nOCUL\t2014\t6.6888E8\nODFL\t1991\t6.7E9\nOFED\t2011\t1.205E8\nOFIX\t1992\t5.8978E8\nOFS\t2012\t1.1248E8\nOKSB\t1993\t3.2336E8\nOMAB\t2006\t1.86E9\nOMCL\t2001\t1.25E9\nOMED\t2013\t8.0696E8\nOMER\t2009\t7.9956E8\nONCE\t2015\t1.21E9\nONNN\t2000\t5.24E9\nONTX\t2013\t5.163E7\nONVI\t2000\t3.336E7\nOPB\t2014\t8.006E8\nOPHT\t2013\t1.88E9\nOPTT\t2007\t9580000.0\nORBC\t2006\t3.8899E8\nOREX\t2007\t7.3407E8\nORLY\t1993\t2.088E10\nORPN\t2014\t9.833E7\nOSIR\t2006\t5.6697E8\nOSIS\t1997\t1.44E9\nOSN\t2010\t1.493E7\nOSTK\t2002\t5.1271E8\nOTEX\t1996\t7.3E9\nOTIC\t2014\t8.0296E8\nOVTI\t2000\t1.54E9\nOXBR\t2014\t3.672E7\nOXFD\t2013\t2.3353E8\nOXLC\t2011\t2.4293E8\nOZRK\t1997\t2.83E9\nPACB\t2010\t5.064E8\nPAHC\t2014\t1.35E9\nPANL\t1996\t0.0\nPARN\t2014\t5.973E7\nPAYX\t1983\t1.8E10\nPBIB\t2006\t1.325E7\nPBPB\t2013\t4.4432E8\nPBSK\t2011\t5.823E7\nPCCC\t1998\t6.481E8\nPCLN\t1999\t6.368E10\nPCRX\t2011\t4.23E9\nPCTI\t1999\t1.5211E8\nPCTY\t2014\t1.53E9\nPCYC\t1995\t1.341E10\nPDCO\t1992\t5.08E9\nPDFS\t2001\t5.4764E8\nPDII\t1998\t3.011E7\nPDLI\t1992\t1.17E9\nPDVW\t2015\t0.0\nPEGA\t1996\t1.72E9\nPEGI\t2013\t1.95E9\nPENN\t1994\t1.29E9\nPEOP\t2010\t1.3552E8\nPERY\t1993\t3.5702E8\nPETM\t1993\t8.24E9\nPETX\t2013\t5.893E8\nPFBI\t1996\t1.21E8\nPFLT\t2011\t2.0679E8\nPFMT\t2012\t2.9264E8\nPFPT\t2012\t2.18E9\nPFSW\t1999\t1.8578E8\nPGNX\t1997\t4.3333E8\nPGTI\t2006\t4.0144E8\nPIH\t2014\t4.87E7\nPINC\t2013\t1.32E9\nPLAB\t1987\t5.6662E8\nPLAY\t2014\t1.22E9\nPLCE\t1997\t1.21E9\nPLCM\t1996\t1.89E9\nPLNR\t1993\t1.3602E8\nPLUG\t1999\t5.6093E8\nPLUS\t1996\t5.9559E8\nPMBC\t2000\t1.3799E8\nPNNT\t2007\t7.1263E8\nPODD\t2007\t1.79E9\nPOOL\t1995\t3.04E9\nPOWI\t1997\t1.6E9\nPOZN\t2000\t2.3481E8\nPRAA\t2002\t2.71E9\nPRAH\t2014\t1.61E9\nPRCP\t1992\t1.0241E8\nPRFT\t1999\t6.7472E8\nPRGN\t2013\t4.648E7\nPRGS\t1991\t1.38E9\nPRGX\t1996\t1.4525E8\nPRKR\t1993\t1.0103E8\nPRMW\t2010\t9.91E7\nPRQR\t2014\t4.4272E8\nPRSC\t2003\t6.4444E8\nPRSS\t2012\t6.48E7\nPRTO\t2014\t1.737E8\nPRTS\t2007\t9.364E7\nPRXL\t1995\t3.48E9\nPSEC\t2004\t3.15E9\nPSEM\t1997\t3.3558E8\nPSTB\t2010\t3.135E8\nPSUN\t1999\t1.9671E8\nPTCT\t2013\t1.85E9\nPTEN\t1993\t2.68E9\nPTIE\t2000\t8.968E7\nPTLA\t2013\t1.84E9\nPTRY\t1999\t8.6238E8\nPTSI\t1986\t4.5007E8\nPVTB\t1999\t2.75E9\nPWRD\t2007\t9.4323E8\nPXLW\t2000\t1.2498E8\nPZZA\t1993\t2.6E9\nQBAK\t2000\t1.813E7\nQCCO\t2004\t2.891E7\nQCOM\t1991\t1.1798E11\nQIWI\t2013\t1.23E9\nQLIK\t2010\t2.84E9\nQLTY\t2003\t3.0669E8\nQLYS\t2012\t1.6E9\nQNST\t2010\t2.8208E8\nQPACU\t2015\t0.0\nQSII\t1982\t1.07E9\nQTNT\t2014\t2.8674E8\nQUIK\t1999\t1.201E8\nQUNR\t2013\t3.43E9\nQURE\t2014\t3.4379E8\nRAIL\t2005\t3.678E8\nRARE\t2014\t1.97E9\nRBCAA\t1998\t4.9688E8\nRBCN\t2007\t1.1742E8\nRCII\t1995\t1.54E9\nRCKY\t1993\t1.5221E8\nRCON\t2009\t7940000.0\nRCPT\t2013\t3.95E9\nRDCM\t1997\t8.243E7\nRDUS\t2014\t1.72E9\nRDWR\t1999\t9.5056E8\nRECN\t2000\t6.6595E8\nREGI\t2012\t3.7907E8\nREGN\t1991\t4.349E10\nRELL\t1983\t1.2841E8\nREPH\t2014\t2.489E7\nRESN\t2014\t1.0376E8\nREXX\t2007\t2.635E8\nRGDO\t2013\t3.798E7\nRGDX\t2007\t2.094E7\nRGEN\t1986\t8.3277E8\nRGLS\t2012\t9.0889E8\nRICK\t1995\t1.0748E8\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%hive\n",
+      "user": "admin",
+      "dateUpdated": "2020-12-12T14:46:13+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607783305179_1414814458",
+      "id": "paragraph_1607783305179_1414814458",
+      "dateCreated": "2020-12-12T14:28:25+0000",
+      "status": "READY",
+      "focus": true,
+      "$$hashKey": "object:101591"
+    }
+  ],
+  "name": "Example I",
+  "id": "2FSBXHSXW",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0-preview2",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {
+    "isRunning": false
+  },
+  "path": "/Hive/Example I",
+  "checkpoint": {
+    "message": "version 1.0"
+  }
+}
