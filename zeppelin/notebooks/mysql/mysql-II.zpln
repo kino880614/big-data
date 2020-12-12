@@ -1,0 +1,309 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "%mysql(refreshInterval=1000,template=\"Hora Actual <h3>{0}</h3>\")\nselect DATE_FORMAT(now(),\"%d-%m-%Y %H:%i:%S\")",
+      "user": "user1",
+      "dateUpdated": "2020-12-12T08:37:07+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607751178487_867622879",
+      "id": "paragraph_1607751178487_867622879",
+      "dateCreated": "2020-12-12T05:32:58+0000",
+      "dateStarted": "2020-12-12T08:36:45+0000",
+      "dateFinished": "2020-12-12T08:36:59+0000",
+      "status": "ABORT",
+      "focus": true,
+      "$$hashKey": "object:10021"
+    },
+    {
+      "title": "Agrupacion",
+      "text": "%mysql(refreshInterval=60000)\nselect CASE WHEN gender ='M' THEN \"MASCULINO\" ELSE \"FEMENINO\" END gender,count(1) count_gender from employees.employees GROUP BY CASE WHEN gender ='M' THEN \"MASCULINO\" ELSE \"FEMENINO\" END;\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-12T08:32:46+0000",
+      "config": {
+        "colWidth": 6,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "pieChart",
+              "height": 300,
+              "optionOpen": false
+            },
+            "helium": {}
+          },
+          "1": {
+            "graph": {
+              "mode": "pieChart",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "gender": "string",
+                      "count_gender": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            },
+            "helium": {}
+          },
+          "2": {
+            "graph": {
+              "mode": "pieChart",
+              "height": 300,
+              "optionOpen": false
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql",
+        "editorHide": true,
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "gender\tcount_gender\nMASCULINO\t179973\nFEMENINO\t120051\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607751591933_58662026",
+      "id": "paragraph_1607751591933_58662026",
+      "dateCreated": "2020-12-12T05:39:51+0000",
+      "dateStarted": "2020-12-12T07:22:57+0000",
+      "dateFinished": "2020-12-12T07:23:00+0000",
+      "status": "ABORT",
+      "$$hashKey": "object:10022"
+    },
+    {
+      "title": "Empleados",
+      "text": "%mysql\nselect\nDATE_FORMAT(hire_date, '%Y') hire_date,gender,count(emp_no)\nfrom employees.employees\nwhere gender ='${Genero=F,F|M}'\ngroup by DATE_FORMAT(hire_date, '%Y'),gender;",
+      "user": "user1",
+      "dateUpdated": "2020-12-12T08:36:08+0000",
+      "config": {
+        "colWidth": 6,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "lineChart",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "hire_date": "string",
+                      "gender": "string",
+                      "count(emp_no)": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default",
+                  "isDateFormat": false,
+                  "lineWithFocus": false,
+                  "forceY": false
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "hire_date",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [
+                {
+                  "name": "gender",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ],
+              "values": [
+                {
+                  "name": "count(emp_no)",
+                  "index": 2,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql",
+        "lineNumbers": true,
+        "title": true,
+        "editorHide": true,
+        "runOnSelectionChange": true
+      },
+      "settings": {
+        "params": {
+          "Genero": "F"
+        },
+        "forms": {
+          "Genero": {
+            "type": "Select",
+            "options": [
+              {
+                "value": "F",
+                "$$hashKey": "object:10110"
+              },
+              {
+                "value": "M",
+                "$$hashKey": "object:10111"
+              }
+            ],
+            "name": "Genero",
+            "displayName": "Genero",
+            "defaultValue": "F",
+            "hidden": false,
+            "$$hashKey": "object:10095"
+          }
+        }
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "hire_date\tgender\tcount(emp_no)\n1985\tF\t14047\n1989\tF\t11501\n1990\tF\t10200\n1993\tF\t7147\n1987\tF\t13426\n1997\tF\t2609\n1994\tF\t6017\n1992\tF\t8079\n1986\tF\t14434\n1991\tF\t8910\n1988\tF\t12804\n1996\tF\t3770\n1998\tF\t1696\n1995\tF\t4795\n1999\tF\t609\n2000\tF\t7\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607752655144_1139890750",
+      "id": "paragraph_1607752655144_1139890750",
+      "dateCreated": "2020-12-12T05:57:35+0000",
+      "dateStarted": "2020-12-12T08:35:39+0000",
+      "dateFinished": "2020-12-12T08:35:39+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:10023"
+    },
+    {
+      "text": "%mysql\n",
+      "user": "anonymous",
+      "dateUpdated": "2020-12-12T06:03:31+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1607753011622_1658202949",
+      "id": "paragraph_1607753011622_1658202949",
+      "dateCreated": "2020-12-12T06:03:31+0000",
+      "status": "READY",
+      "$$hashKey": "object:10024"
+    }
+  ],
+  "name": "mysql-II",
+  "id": "2FSXGUW2T",
+  "defaultInterpreterGroup": "mysql",
+  "version": "0.9.0-preview2",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "mysql-shared_process": [
+      {
+        "name": "value_0",
+        "object": "12-12-2020 08:36:58",
+        "noteId": "2FSXGUW2T",
+        "paragraphId": "paragraph_1607751178487_867622879"
+      }
+    ]
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/JDBC/mysql-II"
+}
