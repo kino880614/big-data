@@ -27,6 +27,6 @@
 	</property>
 	<property>
      <name>hadoop.http.staticuser.user</name>
-     <value>root</value>
+     <value>dr.who</value>
 	</property>
 </configuration>
