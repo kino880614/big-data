@@ -2,12 +2,12 @@
 
 # Debemos generar 2 volumenes para hadoop (datos y logs)
 
-docker volume create hadoop-data
-docker volume create hadoop-logs
+<p> docker volume create hadoop-data </p>
+<p> docker volume create hadoop-logs </p>
 
 # Debemos generar 2 volumnes para zeppelin (logs y notebooks)
-docker volume create zeppelin-notebook
-docker volume create zeppelin-logs
+<p> docker volume create zeppelin-notebook </p>
+<p> docker volume create zeppelin-logs </p>
 
 # Iniciar Contenedor
 
