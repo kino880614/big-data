@@ -18,6 +18,7 @@ RUN apt-get install -y libldap2-dev
 RUN apt-get install -y libxslt1-dev 
 RUN apt-get install -y libgmp3-dev 
 RUN apt-get install -y libsasl2-dev 
+RUN apt-get install -y curl
  
 ENV HADOOP_HOME=/opt/hadoop
 ENV USER=root
@@ -153,7 +154,24 @@ COPY /zeppelin/conf/shiro.ini /zeppelin/conf
 
 COPY /zeppelin/conf/zeppelin-env.sh /zeppelin/conf
 
-##### ZEPPELIN #####
+##### /ZEPPELIN #####
+
+
+##### FLUME #####
+ENV FLUME_HOME /opt/hadoop/flume
+ENV PATH $FLUME_HOME/bin:$PATH
+RUN echo "PATH=$PATH:$FLUME_HOME/bin" >> ~/.bashrc
+
+WORKDIR /
+ADD flume/apache-flume-1.9.0-bin.tar.gz /
+RUN mv apache-flume-1.9.0-bin $FLUME_HOME
+RUN cp /opt/hadoop/share/hadoop/hdfs/lib/guava-27.0-jre.jar $FLUME_HOME/lib
+RUN rm /opt/hadoop/share/hadoop/hdfs/lib/guava-11.0-jre.jar
+
+COPY flume/example-memory.conf /opt/hadoop/flume/conf/
+
+##### /FLUME #####
+
 
 #WEBUI
 EXPOSE 9870
