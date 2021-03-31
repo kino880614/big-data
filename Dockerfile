@@ -166,27 +166,20 @@ WORKDIR /
 ADD flume/apache-flume-1.9.0-bin.tar.gz /
 RUN mv apache-flume-1.9.0-bin $FLUME_HOME
 RUN cp /opt/hadoop/share/hadoop/hdfs/lib/guava-27.0-jre.jar $FLUME_HOME/lib
-RUN rm /opt/hadoop/share/hadoop/hdfs/lib/guava-11.0-jre.jar
+# RUN rm /opt/hadoop/share/hadoop/hdfs/lib/guava-11.0-jre.jar
 
 COPY flume/example-memory.conf /opt/hadoop/flume/conf/
 
 ##### /FLUME #####
 
-
-#WEBUI
-EXPOSE 9870
-
 # HDFS
-EXPOSE 50070 50470 8020 9000 50075 50475 50010 50020 50090 8888 9866 9864 9865 9868
+EXPOSE 9000 9820 9864 9866 9867 9868 9870
 
 # MAPREDUCE
-EXPOSE 50030 8021 50060 51111
-
-# MapReduce JobHistory 
-EXPOSE 10020 19888
+EXPOSE 10020 10033 19888
 
 # YARN
-EXPOSE 8088 8090 8050 8025 8030 8032 8042
+EXPOSE 8030 8031 8032 8050 8025 8042 8088
 
 # HIVE
 EXPOSE 10000 9999 9083
@@ -195,7 +188,7 @@ EXPOSE 10000 9999 9083
 EXPOSE 16000 16010 16020 16030 9090 9095
 
 #SPARK
-EXPOSE 4040
+EXPOSE 4040 8080 8081 7077 6066 18080
 
 # ZEPPELIN
 EXPOSE 9900

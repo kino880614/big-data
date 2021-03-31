@@ -82,5 +82,5 @@ if [[ -f "${HADOOP_YARN_HOME}/sbin/start-yarn.sh" ]]; then
 fi
 
 #historyserver
-./mapred --daemon start historyserver
+/opt/hadoop/bin/mapred --daemon start historyserver
 

@@ -263,8 +263,7 @@
   <description>local notebook persistence layer implementation</description>
 </property>
 -->
-
-<!-- Notebook storage layer using hadoop compatible file system
+<!--
 <property>
   <name>zeppelin.notebook.storage</name>
   <value>org.apache.zeppelin.notebook.repo.FileSystemNotebookRepo</value>
