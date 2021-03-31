@@ -31,10 +31,18 @@
 	</property>
 	<property>
 		<name>dfs.datanode.http.address</name>
-		<value>0.0.0.0:9865</value>
+		<value>0.0.0.0:9868</value>
 	</property>
 	<property>
-		<name>dfs.datanode.http.address</name>
-		<value>0.0.0.0:9868</value>
+		<name>dfs.webhdfs.enabled</name>
+		<value>true</value>
+	</property>
+	<property>
+		<name>dfs.namenode.rpc-address</name>
+		<value>0.0.0.0:9820</value>
+	</property>
+	<property>
+		<name>dfs.namenode.http-address</name>
+		<value>0.0.0.0:9870</value>
 	</property>
 </configuration>
