@@ -1,7 +1,5 @@
 FROM debian:stretch
 
-ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
-
 RUN apt-get update
 RUN apt-get install -y build-essential
 RUN apt-get install -y ssh 
@@ -19,7 +17,8 @@ RUN apt-get install -y libxslt1-dev
 RUN apt-get install -y libgmp3-dev 
 RUN apt-get install -y libsasl2-dev 
 RUN apt-get install -y curl
- 
+
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 ENV HADOOP_HOME=/opt/hadoop
 ENV USER=root
 ENV PATH $HADOOP_HOME/bin/:$PATH
@@ -28,20 +27,17 @@ ENV PATH $HADOOP_HOME/bin/:$PATH
 # If you have already downloaded the tgz, add this line OR comment it AND ...
 ADD /hadoop/hadoop-3.1.3.tar.gz /
 
-# ... uncomment the 2 first lines
 RUN \
-#    wget http://apache.crihan.fr/dist/hadoop/common/hadoop-3.1.3/hadoop-3.1.3.tar.gz && \
-#    tar -xzf hadoop-3.1.3.tar.gz && \
     mv hadoop-3.1.3 $HADOOP_HOME && \
-    for user in hadoop hdfs yarn mapred hue; do \
+    for user in root ; do \
          useradd -U -M -d /opt/hadoop/ --shell /bin/bash ${user}; \
     done && \
-    for user in root hdfs yarn mapred ; do \
+    for user in root ; do \
          usermod -G hadoop ${user}; \
     done && \
     echo "export JAVA_HOME=$JAVA_HOME" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh && \
     echo "export HDFS_DATANODE_USER=root" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh && \
-#    echo "export HDFS_DATANODE_SECURE_USER=hdfs" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh && \
+    echo "export HDFS_DATANODE_SECURE_USER=root" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh && \
     echo "export HDFS_NAMENODE_USER=root" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh && \
     echo "export HDFS_SECONDARYNAMENODE_USER=root" >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh && \
     echo "export YARN_RESOURCEMANAGER_USER=root" >> $HADOOP_HOME/etc/hadoop/yarn-env.sh && \
